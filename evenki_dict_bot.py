@@ -49,5 +49,5 @@ def get_random_prefix():
     random_num = random.randint(0,  len(PREFIXES_FOUND) - 1)
     return PREFIXES_FOUND[random_num]
 
-
+initialize_dict()
 bot.polling()
