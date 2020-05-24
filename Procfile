@@ -1,1 +1,1 @@
-web: python evenki_dict_bot.py
+worker: python evenki_dict_bot.py
