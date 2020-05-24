@@ -72,4 +72,4 @@ def get_random_prefix():
     return PREFIXES_FOUND[random_num]
 
 #initialize_dict()
-bot.polling()
+bot.polling(none_stop=True)
