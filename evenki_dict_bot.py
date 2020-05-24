@@ -13,6 +13,9 @@ REASONS_NO_WORD = ['К сожалению, такого слова я не зн�
                    'Хм, в следующий раз попробую найти.',
                    'Впервые слышу такое слово. Что это?']
 
+PREFIXES_FOUND = ['Вот какие переводы нашлись:', 'Да, что-то есть такое :)',
+                  'Я справился! ', 'Удалось найти:']
+
 @bot.message_handler(commands=['start'])
 def start_message(message):
     bot.send_message(message.chat.id, 'Привет! Дорово!')
@@ -27,7 +30,7 @@ def send_text(message):
     if not evenki_words:
         bot.send_message(message.chat.id, get_random_reason())
     else:
-        bot.send_message(message.chat.id, 'Вот какие переводы нашлись: *' + ', '.join(sorted(evenki_words)) + '*',
+        bot.send_message(message.chat.id,  get_random_prefix() +' *' + ', '.join(sorted(evenki_words)) + '*',
                          parse_mode='Markdown')
 
 
@@ -41,5 +44,10 @@ def initialize_dict():
 def get_random_reason():
     random_num = random.randint(0,  len(REASONS_NO_WORD) - 1)
     return REASONS_NO_WORD[random_num]
+
+def get_random_prefix():
+    random_num = random.randint(0,  len(PREFIXES_FOUND) - 1)
+    return PREFIXES_FOUND[random_num]
+
 
 bot.polling()
