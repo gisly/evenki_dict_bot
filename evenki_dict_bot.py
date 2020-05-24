@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*
 import sqlite3
 import random
+import pickle
 
 import telebot
 __author__ = "gisly"
