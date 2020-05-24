@@ -1,0 +1,1 @@
+web: python evenki_dict_bot.py
