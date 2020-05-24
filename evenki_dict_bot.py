@@ -5,6 +5,7 @@ __author__ = "gisly"
 
 bot = telebot.TeleBot('1082882518:AAHB7pDqCCPq7OCBHMtgT28eT-1huop_cXw')
 evenki_dict = {'олень': ['орон', 'багдака'],
+               'волк': ['иргичи']
                }
 
 @bot.message_handler(commands=['start'])
